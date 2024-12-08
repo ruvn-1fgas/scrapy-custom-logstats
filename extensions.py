@@ -61,8 +61,8 @@ class LogStats:
 
             stat_name = self.get_stat_name(stat)
 
-            previos_value = self.prev_values.get(stat_name, 0)
-            rate = (stat_value - previos_value) * self.multiplier
+            previous_value = self.prev_values.get(stat_name, 0)
+            rate = (stat_value - previous_value) * self.multiplier
 
             additional_stats.append(
                 f"scraped {stat_value} {stat_name}s (at {rate} {stat_name}s/min)"
