@@ -68,6 +68,8 @@ class LogStats:
                 f"scraped {stat_value} {stat_name}s (at {rate} {stat_name}s/min)"
             )
 
+            self.prev_values[stat_name] = stat_value
+
         base_msg = (
             f"Crawled {pages} pages (at {prate} pages/min), "
             f"scraped {items} items (at {irate} items/min)"
