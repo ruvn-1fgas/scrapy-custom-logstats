@@ -47,8 +47,8 @@ class LogStats:
     def log(self, spider):
         pages = self.stats.get_value("response_received_count", 0)
         items = self.stats.get_value("item_scraped_count", 0)
-        irate = (items - self.itemsprev) * self.multiplier
-        prate = (pages - self.pagesprev) * self.multiplier
+        irate = int((items - self.itemsprev) * self.multiplier)
+        prate = int((pages - self.pagesprev) * self.multiplier)
         self.pagesprev, self.itemsprev = pages, items
 
         additional_stats = []
@@ -65,7 +65,7 @@ class LogStats:
             rate = (stat_value - previous_value) * self.multiplier
 
             additional_stats.append(
-                f"scraped {stat_value} {stat_name}s (at {rate} {stat_name}s/min)"
+                f"{stat_value} {stat_name}s (at {rate} {stat_name}s/min)"
             )
 
             self.prev_values[stat_name] = stat_value
