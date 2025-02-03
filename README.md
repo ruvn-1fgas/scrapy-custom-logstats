@@ -2,10 +2,6 @@
 
 Custom Scrapy LogStats extension that automatically handles additional stats like pages/items per minute.
 
-## Description
-
-This repository provides a custom Scrapy LogStats extension that enhances the default logging by including additional statistics such as the number of pages and items processed per minute. This can be particularly useful for monitoring and optimizing web scraping performance.
-
 ## Features
 
 - Automatic logging of additional statistics like:
